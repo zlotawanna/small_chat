@@ -1,0 +1,53 @@
+<h1></h1>
+<div class="ui two column relaxed grid">
+  <div class="four wide column">
+    <div>
+      <h2 class="ui centered aligned icon header">
+        <i class="center aligned teal paper plane icon"></i>
+        Small Chat
+      </h2>
+      <div class="ui secondary vertical menu">
+        <a class="active item">
+          Account
+        </a>
+        <a class="item">
+          Settings
+        </a>
+        <div class="ui dropdown item">
+          <i class="dropdown icon"></i>
+          Display Options
+          <div class="menu">
+            <div class="header">Text Size</div>
+            <a class="item">Small</a>
+            <a class="item">Medium</a>
+            <a class="item">Large</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="twelve wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui feed">
+          <h3 class="ui header">Name of the group</h3>
+          <div class="event">
+            <div class="ui list">
+                <%= render @messages %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="extra content">
+      <form class="ui reply form">
+        <div class="field">
+          <div class="ui fluid icon input">
+            <input type="text" placeholder="Enter the message">
+            <i class="bordered yellow inverted icon edit"></i>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
