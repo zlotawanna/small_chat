@@ -12,23 +12,23 @@
     <div class="ui raised segment">
       <div class="ui two column very relaxed grid">
         <div class="column">
-          <div class="ui form">
+          <%= form_with(scope: :session, url: login_path, class: "ui form", local: true) do |f| %>
             <div class="field">
-              <label class="ui center aligned header">Username</label>
+              <%= f.label :username, class: "ui center aligned header" %>
               <div class="ui left icon input">
-                <input type="text" placeholder="Username">
+                <%= f.text_field :username %>
                 <i class="user icon"></i>
               </div>
             </div>
             <div class="field">
-              <label class="ui center aligned header">Password</label>
+              <%= f.label :password, class: "ui center aligned header" %>
               <div class="ui left icon input">
-                <input type="password" placeholder="Password">
+                <%= f.password_field :password %>
                 <i class="lock icon"></i>
               </div>
             </div>
-            <div class="ui yellow fluid submit button">Login</div>
-          </div>
+            <%= f.submit "Log In", class: "ui yellow fluid submit button" %>
+          <% end %>
         </div>
         <div class="middle aligned column">
           <div class="ui fluid big button">

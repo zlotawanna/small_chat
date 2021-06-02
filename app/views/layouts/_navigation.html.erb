@@ -3,10 +3,10 @@
 </a>
 <a class="yellow item">
   <i class="video camera icon"></i>
-  Channels
+  Placeholder
 </a>
 <div class="ui dropdown link item">
-  <span class="text">Shopping</span>
+  <span class="text">Placeholder</span>
   <i class="dropdown icon"></i>
   <div class="menu">
     <div class="header">Categories</div>
@@ -22,6 +22,11 @@
   </div>
 </div>
 <div class="right menu">
-  <%= link_to "Log in", login_path, class: "item" %>
-  <a class="item">Help</a>
+  <% if logged_in? %>
+    <a class="item"><%= current_user.username %></a>
+    <%= link_to "Log out", logout_path, class: "item", method: :delete %>
+  <% else %>
+    <%= link_to "Log in", login_path, class: "item" %>
+  <% end %>
+  <a class="item">Placeholder</a>
 </div>
